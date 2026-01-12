@@ -9,3 +9,7 @@ app = Flask(__name__)
 def app_path():
     g.path = os.path.abspath(os.getcwd())
 
+@app.route('/')
+def index():
+    host = request.headers.get('Host')
+    appname = current_app.name
